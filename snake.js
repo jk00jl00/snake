@@ -11,7 +11,7 @@
       playing       = false,
       startX        = nx / 2,
       startY        = ny / 2,
-      snakeSpeed    = 0.1,
+      snakeSpeed    = 0.5,
       indent        = 10,
       foodAmount    = 1,
       startLen      = 5,
@@ -183,10 +183,10 @@
 	    }
 	} else{
 		switch(dir) {
-	      case DIR.LEFT:  push({x: (head.x <= 0) ?    nx : head.x-1, y: head.y});                            break;
-	      case DIR.RIGHT: push({x: (head.x >= nx -1) ? 0 : head.x+1, y: head.y});                            break;
-	      case DIR.UP:    push({x: head.x,                           y: (head.y <= 0) ? ny : head.y-1});     break;
-	      case DIR.DOWN:  push({x: head.x,                           y: (head.y >= ny - 1) ? 0 : head.y+1}); break;
+	      case DIR.LEFT:  push({x: (head.x <= 0) ?    nx - 1 : head.x-1, y: head.y});                            break;
+	      case DIR.RIGHT: push({x: (head.x >= nx -1) ? 0 : head.x + 1, y: head.y});                            break;
+	      case DIR.UP:    push({x: head.x,                           y: (head.y <= 0) ? ny - 1 : head.y - 1});     break;
+	      case DIR.DOWN:  push({x: head.x,                           y: (head.y >= ny - 1) ? 0 : head.y + 1}); break;
 	    }
   	}
   };
