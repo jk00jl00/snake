@@ -183,10 +183,10 @@
 	    }
 	} else{
 		switch(dir) {
-	      case DIR.LEFT:  push({x: (head.x == 0) ?    nx : head.x-1, y: head.y});                            break;
-	      case DIR.RIGHT: push({x: (head.x == nx -1) ? 0 : head.x+1, y: head.y});                            break;
-	      case DIR.UP:    push({x: head.x,                           y: (head.y == 0) ? ny : head.y-1});     break;
-	      case DIR.DOWN:  push({x: head.x,                           y: (head.y == ny - 1) ? 0 : head.y+1}); break;
+	      case DIR.LEFT:  push({x: (head.x <= 0) ?    nx : head.x-1, y: head.y});                            break;
+	      case DIR.RIGHT: push({x: (head.x >= nx -1) ? 0 : head.x+1, y: head.y});                            break;
+	      case DIR.UP:    push({x: head.x,                           y: (head.y <= 0) ? ny : head.y-1});     break;
+	      case DIR.DOWN:  push({x: head.x,                           y: (head.y >= ny - 1) ? 0 : head.y+1}); break;
 	    }
   	}
   };
